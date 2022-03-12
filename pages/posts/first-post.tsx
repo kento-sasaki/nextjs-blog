@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import Script from 'next/script';
 import Head from 'next/head';
 import Link from 'next/link';
-import { Layout } from '../../components/Layout';
+import { Layout } from '../../components/layout';
 
 const FirstPost: NextPage = () => {
   return (

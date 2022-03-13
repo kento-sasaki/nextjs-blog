@@ -1,5 +1,5 @@
-import type { NextPage } from 'next';
 import Head from 'next/head';
+import { FC } from 'react';
 import Image from 'next/image';
 import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
@@ -12,7 +12,7 @@ type Props = {
   home?: boolean;
 };
 
-export const Layout: NextPage<Props> = ({ children, home = false }) => {
+export const Layout: FC<Props> = ({ children, home = false }) => {
   console.log('layout');
   return (
     <div className={styles.container}>

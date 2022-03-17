@@ -1,10 +1,10 @@
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next'
 import Head from 'next/head'
 
+import utilStyles from '../../../styles/utils.module.css'
 import { Date } from '../../components/date'
 import { Layout } from '../../components/layout'
 import { getAllPostIds, getPostData, PostData } from '../../lib/posts'
-import utilStyles from '../../styles/utils.module.css'
 
 type Props = {
   postData: PostData | undefined

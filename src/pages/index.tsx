@@ -1,24 +1,25 @@
-import Head from 'next/head';
-import { Layout, siteTitle } from '../components/layout';
-import Link from 'next/link';
-import { Date } from '../components/date';
-import utilStyles from '../styles/utils.module.css';
-import type { NextPage, GetStaticProps } from 'next';
-import { getSortedPostsData, MetaData } from '../lib/posts';
+import type { NextPage, GetStaticProps } from 'next'
+import Head from 'next/head'
+import Link from 'next/link'
+
+import { Date } from '../components/date'
+import { Layout, siteTitle } from '../components/layout'
+import { getSortedPostsData, MetaData } from '../lib/posts'
+import utilStyles from '../styles/utils.module.css'
 
 type Props = {
-  allPostsData: MetaData[];
-};
+  allPostsData: MetaData[]
+}
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const allPostsData = getSortedPostsData();
+  const allPostsData = getSortedPostsData()
 
   return {
     props: {
       allPostsData,
     },
-  };
-};
+  }
+}
 
 const Home: NextPage<Props> = ({ allPostsData }) => {
   return (
@@ -43,7 +44,7 @@ const Home: NextPage<Props> = ({ allPostsData }) => {
         </ul>
       </section>
     </Layout>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

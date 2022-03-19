@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
 
-import utilStyles from '../../styles/utils.module.css'
+import utilStyles from '../styles/utils.module.css'
 
 import styles from './layout.module.css'
 

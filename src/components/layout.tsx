@@ -15,7 +15,6 @@ type Props = {
 }
 
 export const Layout: FC<Props> = ({ children, home = false }) => {
-  console.log('layout')
   return (
     <div className={styles.container}>
       <Head>

@@ -2,10 +2,10 @@ import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 
-import utilStyles from '../../styles/utils.module.css'
 import { Date } from '../components/date'
 import { Layout, siteTitle } from '../components/layout'
 import { getSortedPostsData, MetaData } from '../lib/posts'
+import utilStyles from '../styles/utils.module.css'
 
 type Props = {
   allPostsData: MetaData[]

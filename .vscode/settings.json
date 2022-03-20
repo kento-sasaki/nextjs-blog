@@ -6,7 +6,6 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.lineNumbers": "on",
-  "editor.rulers": [80],
   "editor.wordWrap": "on",
   "eslint.packageManager": "yarn",
   "files.insertFinalNewline": true,

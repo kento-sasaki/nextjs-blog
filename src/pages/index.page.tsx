@@ -1,3 +1,4 @@
+import { Heading } from '@chakra-ui/react'
 import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
@@ -5,7 +6,8 @@ import Link from 'next/link'
 import { Date } from '../components/date'
 import { Layout, siteTitle } from '../components/layout'
 import { getSortedPostsData, MetaData } from '../lib/posts'
-import utilStyles from '../styles/utils.module.css'
+
+import { colors } from '@src/styles/colors'
 
 type Props = {
   allPostsData: MetaData[]
@@ -27,16 +29,16 @@ const Home: NextPage<Props> = ({ allPostsData }) => {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
+      <section>
+        <Heading color={colors.black}>Blog</Heading>
+        <ul>
           {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
+            <li key={id}>
               <Link href={`/posts/${id}`}>
                 <a>{title}</a>
               </Link>
               <br />
-              <small className={utilStyles.lightText}>
+              <small>
                 <Date dateString={date} />
               </small>
             </li>

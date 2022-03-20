@@ -4,7 +4,6 @@ import Head from 'next/head'
 import { Date } from '../../components/date'
 import { Layout } from '../../components/layout'
 import { getAllPostIds, getPostData, PostData } from '../../lib/posts'
-import utilStyles from '../../styles/utils.module.css'
 
 type Props = {
   postData: PostData | undefined
@@ -46,10 +45,8 @@ const Post: NextPage<Props> = ({ postData }) => {
         <title>{postData?.title ?? 'no title'}</title>
       </Head>
       <article>
-        <h1 className={utilStyles.headingXl}>
-          {postData?.title ?? 'no title'}
-        </h1>
-        <div className={utilStyles.lightText}>
+        <h1>{postData?.title ?? 'no title'}</h1>
+        <div>
           <Date dateString={postData?.date ?? ''} />
         </div>
         {postData?.contentHtml && (

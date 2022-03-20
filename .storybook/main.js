@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
@@ -21,6 +23,10 @@ module.exports = {
       include: /node_modules/,
       type: 'javascript/auto',
     })
+
+    config.resolve.alias = {
+      '@src': path.resolve(__dirname, '../src'),
+    }
     // Return the altered config
     return config
   },

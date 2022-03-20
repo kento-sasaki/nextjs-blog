@@ -12,8 +12,8 @@ import NextLink from 'next/link'
 import { VFC } from 'react'
 import { FiGithub, FiTwitter } from 'react-icons/fi'
 
-import * as urls from '../../constants/urls'
-import { colors } from '../../styles/colors'
+import * as urls from '@src/constants/urls'
+import { colors } from '@src/styles/colors'
 
 type Props = {
   title: string

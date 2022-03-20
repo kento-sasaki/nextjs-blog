@@ -1,18 +1,8 @@
-import {
-  Container,
-  HStack,
-  Heading,
-  Icon,
-  Spacer,
-  Box,
-  Flex,
-  Link,
-} from '@chakra-ui/react'
+import { Container, HStack, Heading, Spacer, Box, Flex } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import { VFC } from 'react'
-import { FiGithub, FiTwitter } from 'react-icons/fi'
 
-import * as urls from '@src/constants/urls'
+import { GitHubIcon, TwitterIcon } from '@src/components/Icons'
 import { colors } from '@src/styles/colors'
 
 type Props = {
@@ -43,24 +33,8 @@ export const Header: VFC<Props> = props => {
           <Spacer />
 
           <HStack spacing="20px">
-            <Link href={urls.githubUrl} isExternal>
-              <Icon
-                as={FiGithub}
-                w={6}
-                h={6}
-                color={colors.white}
-                display="block"
-              />
-            </Link>
-            <Link href={urls.twitterUrl} isExternal>
-              <Icon
-                as={FiTwitter}
-                w={6}
-                h={6}
-                color={colors.white}
-                display="block"
-              />
-            </Link>
+            <GitHubIcon width={5} height={5} />
+            <TwitterIcon width={5} height={5} />
           </HStack>
         </Flex>
       </Container>

@@ -3,12 +3,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
 
-import utilStyles from '../styles/utils.module.css'
-
 import styles from './layout.module.css'
 
 const name = 'Kento Sasaki'
-export const siteTitle = 'Next.js Sample Website'
+export const siteTitle = 'Kent.dev'
 
 type Props = {
   home?: boolean
@@ -38,13 +36,12 @@ export const Layout: FC<Props> = ({ children, home = false }) => {
             <Image
               priority
               src="/images/profile.jpg"
-              className={utilStyles.borderCircle}
               height={144}
               width={144}
               alt={name}
             />
 
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <h1>{name}</h1>
           </>
         ) : (
           <>
@@ -53,16 +50,15 @@ export const Layout: FC<Props> = ({ children, home = false }) => {
                 <Image
                   priority
                   src="/images/profile.jpg"
-                  className={utilStyles.borderCircle}
                   height={108}
                   width={108}
                   alt={name}
                 />
               </a>
             </Link>
-            <h2 className={utilStyles.headingLg}>
+            <h2>
               <Link href="/">
-                <a className={utilStyles.colorInherit}>{name}</a>
+                <a>{name}</a>
               </Link>
             </h2>
           </>
@@ -79,5 +75,3 @@ export const Layout: FC<Props> = ({ children, home = false }) => {
     </div>
   )
 }
-
-// export default Layout;

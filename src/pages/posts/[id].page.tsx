@@ -3,7 +3,7 @@ import Head from 'next/head'
 
 import { getAllPostIds, getPostData, PostData } from '../../lib/posts'
 
-import { Layout } from '@src/components/Layout/Layout'
+import { Layout } from '@src/components'
 import { Date } from '@src/components/date'
 
 type Props = {

@@ -3,7 +3,7 @@ import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 
-import { Layout, siteTitle } from '@src/components/Layout/Layout'
+import { Layout, siteTitle } from '@src/components'
 import { Date } from '@src/components/date'
 import { getSortedPostsData, MetaData } from '@src/lib/posts'
 import { colors } from '@src/styles/colors'

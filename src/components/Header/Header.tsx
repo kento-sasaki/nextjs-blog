@@ -2,7 +2,7 @@ import { Container, HStack, Heading, Spacer, Box, Flex } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import { VFC } from 'react'
 
-import { GitHubIcon, TwitterIcon } from '@src/components/Icons'
+import { GitHubIcon, TwitterIcon } from '@src/components'
 import { colors } from '@src/styles/colors'
 
 type Props = {

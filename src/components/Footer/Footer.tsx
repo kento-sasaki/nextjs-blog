@@ -1,8 +1,7 @@
 import { HStack, Box, Center, Text } from '@chakra-ui/react'
 import { VFC } from 'react'
 
-import { GitHubIcon, TwitterIcon } from '@src/components/Icons'
-import { Spacer } from '@src/components/Spacer/Spacer'
+import { GitHubIcon, TwitterIcon, Spacer } from '@src/components'
 import { colors } from '@src/styles/colors'
 
 export const Footer: VFC = () => {

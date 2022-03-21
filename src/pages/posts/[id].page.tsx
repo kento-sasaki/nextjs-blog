@@ -1,9 +1,10 @@
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next'
 import Head from 'next/head'
 
-import { Date } from '../../components/date'
-import { Layout } from '../../components/layout'
 import { getAllPostIds, getPostData, PostData } from '../../lib/posts'
+
+import { Layout } from '@src/components'
+import { Date } from '@src/components/date'
 
 type Props = {
   postData: PostData | undefined
@@ -14,9 +15,7 @@ type Params = {
 }
 
 // getStataicProps which fetches necessary data for the post with id
-export const getStaticProps: GetStaticProps<Props, Params> = async ({
-  params,
-}) => {
+export const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) => {
   if (!params?.id) return { props: { postData: undefined } }
 
   const postData = await getPostData(params?.id ?? '')

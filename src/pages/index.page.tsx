@@ -3,10 +3,9 @@ import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 
-import { Date } from '../components/date'
-import { Layout, siteTitle } from '../components/layout'
-import { getSortedPostsData, MetaData } from '../lib/posts'
-
+import { Layout, siteTitle } from '@src/components'
+import { Date } from '@src/components/date'
+import { getSortedPostsData, MetaData } from '@src/lib/posts'
 import { colors } from '@src/styles/colors'
 
 type Props = {

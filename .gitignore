@@ -38,3 +38,7 @@ yarn-error.log*
 *.tsbuildinfo
 
 .eslintcache
+
+build-storybook.log
+
+.env

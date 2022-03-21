@@ -1,4 +1,4 @@
-name: Testing
+name: Typecheck
 
 on: push
 
@@ -22,6 +22,3 @@ jobs:
 
       - name: Check types
         run: yarn tsc
-
-      - name: Run Chromatic
-        run: yarn chromatic

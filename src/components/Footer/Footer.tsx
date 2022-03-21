@@ -1,0 +1,23 @@
+import { HStack, Box, Center, Text } from '@chakra-ui/react'
+import { VFC } from 'react'
+
+import { GitHubIcon, TwitterIcon } from '@src/components/Icons'
+import { Spacer } from '@src/components/Spacer/Spacer'
+import { colors } from '@src/styles/colors'
+
+export const Footer: VFC = () => {
+  return (
+    <Box bg={colors.secondaryGray} as="footer" paddingBottom={2} paddingTop={12}>
+      <Center flexDirection="column">
+        <HStack spacing="20px">
+          <GitHubIcon width={5} height={5} color={colors.lightGray} />
+          <TwitterIcon width={5} height={5} color={colors.lightGray} />
+        </HStack>
+        <Spacer size={20} />
+        <Text color={colors.lightGray} fontSize="sm">
+          2022 Kent.dev - All rights reserved
+        </Text>
+      </Center>
+    </Box>
+  )
+}

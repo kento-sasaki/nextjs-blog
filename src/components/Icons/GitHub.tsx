@@ -1,4 +1,4 @@
-import { Icon, Link, LayoutProps } from '@chakra-ui/react'
+import { Icon, Link, LayoutProps, ColorProps } from '@chakra-ui/react'
 import { VFC } from 'react'
 import { FiGithub } from 'react-icons/fi'
 
@@ -9,20 +9,16 @@ type Props = {
   width: number
   height: number
   display?: LayoutProps['display']
+  color?: ColorProps['color']
 }
 
 export const GitHubIcon: VFC<Props> = ({
   width,
   height,
   display = 'block',
+  color = colors.white,
 }) => (
   <Link href={urls.githubUrl} isExternal>
-    <Icon
-      as={FiGithub}
-      w={width}
-      h={height}
-      color={colors.white}
-      display={display}
-    />
+    <Icon as={FiGithub} w={width} h={height} color={color} display={display} />
   </Link>
 )

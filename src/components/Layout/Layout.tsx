@@ -1,20 +1,20 @@
+import { Container, Spacer as ChakraSpacer, Flex, Button } from '@chakra-ui/react'
 import Head from 'next/head'
-import Image from 'next/image'
 import Link from 'next/link'
-import { FC } from 'react'
+import { VFC, ReactNode } from 'react'
+import { FiChevronLeft } from 'react-icons/fi'
 
-import { Header } from '../Header/Header'
+import { Footer, Header, Spacer } from '@src/components'
+import { colors } from '@src/styles/colors'
 
-import styles from './layout.module.css'
-
-const name = 'Kento Sasaki'
 export const siteTitle = 'Kent.dev'
 
 type Props = {
+  children: ReactNode
   home?: boolean
 }
 
-export const Layout: FC<Props> = ({ children, home = false }) => {
+export const Layout: VFC<Props> = ({ children, home = false }) => {
   return (
     <>
       <Head>
@@ -29,17 +29,26 @@ export const Layout: FC<Props> = ({ children, home = false }) => {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <Header title={siteTitle} />
-      <div className={styles.container}>
-        <main>{children}</main>
-        {!home && (
-          <div className={styles.backToHome}>
-            <Link href="/">
-              <a>← Back to home</a>
-            </Link>
-          </div>
-        )}
-      </div>
+
+      <Flex flexDirection="column" height="100vh" bg={colors.primaryGray}>
+        <Header title={siteTitle} />
+
+        <Container maxW="container.xl" padding={5}>
+          <main>{children}</main>
+
+          <Spacer size={16} />
+
+          {!home && (
+            <Button leftIcon={<FiChevronLeft />} variant="backToHome">
+              <Link href="/">Back to home</Link>
+            </Button>
+          )}
+        </Container>
+
+        <ChakraSpacer />
+
+        <Footer />
+      </Flex>
     </>
   )
 }

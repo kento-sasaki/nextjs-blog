@@ -15,9 +15,7 @@ type Params = {
 }
 
 // getStataicProps which fetches necessary data for the post with id
-export const getStaticProps: GetStaticProps<Props, Params> = async ({
-  params,
-}) => {
+export const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) => {
   if (!params?.id) return { props: { postData: undefined } }
 
   const postData = await getPostData(params?.id ?? '')

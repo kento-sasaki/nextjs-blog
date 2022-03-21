@@ -20,12 +20,7 @@ export const Header: VFC<Props> = props => {
       <Container maxW="container.xl">
         <Flex alignItems="center" height="40px">
           <NextLink href="/" passHref>
-            <Heading
-              as="h1"
-              color={colors.white}
-              fontSize="2xl"
-              fontWeight={900}
-            >
+            <Heading as="h1" color={colors.white} fontSize="2xl" fontWeight={900}>
               {props.title}
             </Heading>
           </NextLink>

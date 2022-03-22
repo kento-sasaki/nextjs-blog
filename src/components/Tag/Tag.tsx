@@ -2,13 +2,13 @@ import { Tag as ChakraTag, TagLabel, Icon } from '@chakra-ui/react'
 import { VFC } from 'react'
 import { SiGraphql, SiReact, SiApollographql, SiTypescript, SiNextdotjs } from 'react-icons/si'
 
-type Tag = 'react' | 'apollo' | 'graphql' | 'typescript' | 'nextjs'
+export type TagName = 'react' | 'apollo' | 'graphql' | 'typescript' | 'nextjs'
 
 type Props = {
-  name: Tag
+  name: TagName
 }
 
-const label: Record<Tag, string> = {
+const label: Record<TagName, string> = {
   apollo: 'Apollo',
   graphql: 'GraphQL',
   react: 'React',
@@ -18,20 +18,20 @@ const label: Record<Tag, string> = {
 
 export const Tag: VFC<Props> = ({ name }) => {
   return (
-    <ChakraTag size="lg" colorScheme="blue" borderRadius="full" variant="outline">
+    <ChakraTag size="md" colorScheme="teal" borderRadius="full" variant="outline">
       {name === 'apollo' ? (
-        <Icon as={SiApollographql} w={5} h={5} display="block" mr={2} />
+        <Icon as={SiApollographql} w={4} h={4} display="block" mr={2} />
       ) : name === 'graphql' ? (
-        <Icon as={SiGraphql} w={5} h={5} display="block" mr={2} />
+        <Icon as={SiGraphql} w={4} h={4} display="block" mr={2} />
       ) : name === 'nextjs' ? (
-        <Icon as={SiNextdotjs} w={5} h={5} display="block" mr={2} />
+        <Icon as={SiNextdotjs} w={4} h={4} display="block" mr={2} />
       ) : name === 'react' ? (
-        <Icon as={SiReact} w={5} h={5} display="block" mr={2} />
+        <Icon as={SiReact} w={4} h={4} display="block" mr={2} />
       ) : name === 'typescript' ? (
-        <Icon as={SiTypescript} w={5} h={5} display="block" mr={2} />
+        <Icon as={SiTypescript} w={4} h={4} display="block" mr={2} />
       ) : null}
 
-      <TagLabel fontSize={16} fontWeight={800}>
+      <TagLabel fontSize={16} fontWeight={700}>
         {label[name]}
       </TagLabel>
     </ChakraTag>

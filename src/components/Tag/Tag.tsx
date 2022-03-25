@@ -31,7 +31,7 @@ export const Tag: VFC<Props> = ({ name }) => {
         <Icon as={SiTypescript} w={4} h={4} display="block" mr={2} />
       ) : null}
 
-      <TagLabel fontSize={16} fontWeight={700}>
+      <TagLabel fontSize={14} fontWeight={700}>
         {label[name]}
       </TagLabel>
     </ChakraTag>

@@ -17,7 +17,7 @@ export const Header: VFC<Props> = props => {
       borderBottomColor={colors.secondaryGray}
       borderBottomWidth={1}
     >
-      <Container maxW="container.xl">
+      <Container maxW="container.lg">
         <Flex alignItems="center" height="40px">
           <NextLink href="/" passHref>
             <Heading as="h1" color={colors.white} fontSize="2xl" fontWeight={900}>

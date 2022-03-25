@@ -5,12 +5,15 @@ import matter from 'gray-matter'
 import { remark } from 'remark'
 import html from 'remark-html'
 
+import { TagName } from '@src/components'
+
 const postsDirectory = path.join(process.cwd(), 'posts')
 
 export type MetaData = {
   id: string
   title: string
   date: string
+  tags: TagName[]
 }
 
 export type PostData = MetaData & { contentHtml: string }

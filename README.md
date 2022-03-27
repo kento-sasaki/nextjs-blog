@@ -16,3 +16,5 @@ https://www.chromatic.com/builds?appId=62387ebbcd369a003a8631fe
 - https://h.daily-dev-tips.com/
 - https://www.joshwcomeau.com/
 - https://web.dev/blog/
+- https://kentcdodds.com/
+- https://blog.escape.tech/

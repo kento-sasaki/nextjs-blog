@@ -1,9 +1,9 @@
-name: Testing
+name: Typecheck
 
 on: push
 
 jobs:
-  test:
+  typecheck:
     runs-on: ubuntu-latest
     timeout-minutes: 30
 

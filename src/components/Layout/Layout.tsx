@@ -33,7 +33,7 @@ export const Layout: VFC<Props> = ({ children, home = false }) => {
       <Flex flexDirection="column" height="100vh" bg={colors.primaryGray}>
         <Header title={siteTitle} />
 
-        <Container maxW="container.xl" padding={5}>
+        <Container maxW="container.lg" padding={5}>
           <main>{children}</main>
 
           <Spacer size={16} />

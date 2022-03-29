@@ -1,6 +1,7 @@
-import { Container, HStack, Heading, Spacer, Box, Flex } from '@chakra-ui/react'
+import { Container, HStack, Heading, Spacer, Box, Flex, Icon } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import { VFC } from 'react'
+import { HiCode } from 'react-icons/hi'
 
 import { GitHubIcon, TwitterIcon } from '@src/components'
 import { colors } from '@src/styles/colors'
@@ -20,9 +21,12 @@ export const Header: VFC<Props> = props => {
       <Container maxW="container.lg">
         <Flex alignItems="center" height="40px">
           <NextLink href="/" passHref>
-            <Heading as="h1" color={colors.white} fontSize="2xl" fontWeight={900}>
-              {props.title}
-            </Heading>
+            <HStack spacing="12px">
+              <Icon as={HiCode} w={6} h={6} display="block" color={colors.white} />
+              <Heading as="h1" color={colors.white} fontSize="2xl" fontWeight={900}>
+                {props.title}
+              </Heading>
+            </HStack>
           </NextLink>
 
           <Spacer />

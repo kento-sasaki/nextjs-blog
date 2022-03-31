@@ -1,13 +1,12 @@
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next'
 import Head from 'next/head'
 
-import { getAllPostIds, getPostData, PostData } from '../../lib/posts'
-
 import { Layout } from '@src/components'
 import { Date } from '@src/components/date'
+import { getArticleById, getAllArticleIds, Article } from '@src/lib/articles'
 
 type Props = {
-  postData: PostData | undefined
+  article: Article | undefined
 }
 
 type Params = {
@@ -16,20 +15,20 @@ type Params = {
 
 // getStataicProps which fetches necessary data for the post with id
 export const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) => {
-  if (!params?.id) return { props: { postData: undefined } }
+  if (!params?.id) return { props: { article: undefined } }
 
-  const postData = await getPostData(params?.id ?? '')
+  const article = await getArticleById(params?.id ?? '')
 
   return {
     props: {
-      postData,
+      article,
     },
   }
 }
 
 // getStaticPaths which return an array of possible values for id
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
-  const paths = getAllPostIds()
+  const paths = await getAllArticleIds()
 
   return {
     paths,
@@ -37,20 +36,18 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
   }
 }
 
-const Post: NextPage<Props> = ({ postData }) => {
+const Post: NextPage<Props> = ({ article }) => {
   return (
     <Layout>
       <Head>
-        <title>{postData?.title ?? 'no title'}</title>
+        <title>{article?.title ?? 'no title'}</title>
       </Head>
       <article>
-        <h1>{postData?.title ?? 'no title'}</h1>
+        <h1>{article?.title ?? 'no title'}</h1>
         <div>
-          <Date dateString={postData?.date ?? ''} />
+          <Date dateString={article?.date ?? ''} />
         </div>
-        {postData?.contentHtml && (
-          <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-        )}
+        {article?.contentHtml && <div dangerouslySetInnerHTML={{ __html: article.contentHtml }} />}
       </article>
     </Layout>
   )

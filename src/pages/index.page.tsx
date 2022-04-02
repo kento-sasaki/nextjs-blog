@@ -38,7 +38,7 @@ const Home: NextPage<Props> = ({ articles }) => {
           <>
             <Link href={`/articles/${id}`} key={id} passHref>
               <a>
-                <ArticleCard title={title} tags={tags} dateString={date} />
+                <ArticleCard title={title ?? 'No Title'} tags={tags} dateString={date} />
               </a>
             </Link>
             <Spacer size={12} />

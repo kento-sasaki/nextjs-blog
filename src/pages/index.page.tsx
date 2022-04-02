@@ -4,24 +4,24 @@ import Head from 'next/head'
 import Link from 'next/link'
 
 import { Layout, siteTitle, ArticleCard, Spacer } from '@src/components'
-import { getSortedPostsData, MetaData } from '@src/lib/posts'
+import { getArticles, MetaData } from '@src/lib/articles'
 import { colors } from '@src/styles/colors'
 
 type Props = {
-  allPostsData: MetaData[]
+  articles: MetaData[]
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const allPostsData = getSortedPostsData()
+  const articles = await getArticles()
 
   return {
     props: {
-      allPostsData,
+      articles,
     },
   }
 }
 
-const Home: NextPage<Props> = ({ allPostsData }) => {
+const Home: NextPage<Props> = ({ articles }) => {
   return (
     <Layout home>
       <Head>
@@ -34,11 +34,11 @@ const Home: NextPage<Props> = ({ allPostsData }) => {
           </Heading>
         </Center>
         <Spacer size={32} />
-        {allPostsData.map(({ id, date, title, tags }) => (
+        {articles.map(({ id, date, title, tags }) => (
           <>
-            <Link href={`/posts/${id}`} key={id} passHref>
+            <Link href={`/articles/${id}`} key={id} passHref>
               <a>
-                <ArticleCard title={title} tags={tags} dateString={date} />
+                <ArticleCard title={title ?? 'No Title'} tags={tags} dateString={date} />
               </a>
             </Link>
             <Spacer size={12} />

@@ -4,10 +4,11 @@ import { remark } from 'remark'
 import html from 'remark-html'
 
 import { TagName } from '@src/components'
+import { IArticleFields } from '@src/types/generated/contentful'
 
 export type MetaData = {
   id: string
-  title: string
+  title?: string
   date: string
   tags: TagName[]
 }
@@ -20,10 +21,7 @@ const client = createClient({
 })
 
 export const getArticles = async () => {
-  const { items } = await client.getEntries<{
-    title: string
-    body: string
-  }>({ limit: 20 })
+  const { items } = await client.getEntries<IArticleFields>({ limit: 20 })
 
   return items.map(({ sys, fields, metadata }) => ({
     id: sys.id,
@@ -34,12 +32,9 @@ export const getArticles = async () => {
 }
 
 export const getArticleById = async (id: string) => {
-  const { sys, fields, metadata } = await client.getEntry<{
-    title: string
-    body: string
-  }>(id)
+  const { sys, fields, metadata } = await client.getEntry<IArticleFields>(id)
 
-  const contents = fields.body
+  const contents = fields.body ?? ''
 
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(contents)

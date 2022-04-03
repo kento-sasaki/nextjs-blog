@@ -29,9 +29,7 @@ const Home: NextPage<Props> = ({ articles }) => {
       </Head>
       <section>
         <Center>
-          <Heading color={colors.white} fontSize="2xl" fontWeight={900}>
-            Articles
-          </Heading>
+          <Heading variant="heading1">Articles</Heading>
         </Center>
         <Spacer size={32} />
         {articles.map(({ id, date, title, tags }) => (

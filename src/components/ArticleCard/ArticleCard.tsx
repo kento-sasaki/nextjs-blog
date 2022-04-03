@@ -16,9 +16,7 @@ export const ArticleCard: VFC<Props> = props => {
 
   return (
     <Box bg={colors.secondaryGray} padding={4} borderRadius={5}>
-      <Text fontSize={20} color={colors.white} fontWeight={800}>
-        {props.title}
-      </Text>
+      <Text variant="title">{props.title}</Text>
       <Spacer size={8} />
       <HStack spacing={2}>
         {props.tags.map((tagName, i) => (
@@ -26,9 +24,7 @@ export const ArticleCard: VFC<Props> = props => {
         ))}
       </HStack>
       <Spacer size={16} />
-      <Text color={colors.lightGray} fontSize={12}>
-        {format(date, 'yyyy/MM/dd')}
-      </Text>
+      <Text variant="subtext">{format(date, 'yyyy/MM/dd')}</Text>
     </Box>
   )
 }

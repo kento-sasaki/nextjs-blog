@@ -21,10 +21,12 @@ export const Header: VFC<Props> = props => {
       <Container maxW="container.lg">
         <Flex alignItems="center" height="40px">
           <NextLink href="/" passHref>
-            <HStack spacing="12px">
-              <Icon as={HiCode} w={6} h={6} display="block" color={colors.white} />
-              <Heading variant="heading1">{props.title}</Heading>
-            </HStack>
+            <a>
+              <HStack spacing="12px">
+                <Icon as={HiCode} w={6} h={6} display="block" color={colors.white} />
+                <Heading variant="heading1">{props.title}</Heading>
+              </HStack>
+            </a>
           </NextLink>
 
           <Spacer />

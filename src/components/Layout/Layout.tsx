@@ -29,7 +29,7 @@ export const Layout: VFC<Props> = ({ children, home = false }) => {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
-      <Flex flexDirection="column" height="100vh" bg={colors.primaryGray}>
+      <Flex flexDirection="column" minHeight="100vh" bg={colors.primaryGray}>
         <Header title={siteTitle} />
 
         <Container maxW="container.lg" padding={5}>

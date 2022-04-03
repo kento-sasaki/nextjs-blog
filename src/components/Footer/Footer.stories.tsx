@@ -3,6 +3,8 @@ import React from 'react'
 
 import { Footer } from './Footer'
 
+import { siteTitle } from '@src/constants/text'
+
 export default {
   title: 'Blog/Footer',
   component: Footer,
@@ -15,5 +17,5 @@ const Template: ComponentStory<typeof Footer> = args => <Footer {...args} />
 
 export const Primary = Template.bind({})
 Primary.args = {
-  title: 'Kent.dev',
+  title: siteTitle,
 }

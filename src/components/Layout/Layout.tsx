@@ -5,9 +5,8 @@ import { VFC, ReactNode } from 'react'
 import { FiChevronLeft } from 'react-icons/fi'
 
 import { Footer, Header, Spacer } from '@src/components'
+import { siteTitle } from '@src/constants/text'
 import { colors } from '@src/styles/colors'
-
-export const siteTitle = 'Kent.dev'
 
 type Props = {
   children: ReactNode

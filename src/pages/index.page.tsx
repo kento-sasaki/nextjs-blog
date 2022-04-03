@@ -3,9 +3,9 @@ import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 
-import { Layout, siteTitle, ArticleCard, Spacer } from '@src/components'
+import { Layout, ArticleCard, Spacer } from '@src/components'
+import { siteTitle } from '@src/constants/text'
 import { getArticles, MetaData } from '@src/lib/articles'
-import { colors } from '@src/styles/colors'
 
 type Props = {
   articles: MetaData[]

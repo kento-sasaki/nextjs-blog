@@ -3,6 +3,7 @@ import Head from 'next/head'
 
 import { Layout } from '@src/components'
 import { Date } from '@src/components/date'
+import { siteTitle } from '@src/constants/text'
 import { getArticleById, getAllArticleIds, Article } from '@src/lib/articles'
 
 type Props = {
@@ -36,11 +37,13 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
   }
 }
 
-const Post: NextPage<Props> = ({ article }) => {
+const Article: NextPage<Props> = ({ article }) => {
   return (
     <Layout>
       <Head>
-        <title>{article?.title ?? 'no title'}</title>
+        <title>
+          {siteTitle} | {article?.title ?? 'no title'}
+        </title>
       </Head>
       <article>
         <h1>{article?.title ?? 'no title'}</h1>
@@ -53,4 +56,4 @@ const Post: NextPage<Props> = ({ article }) => {
   )
 }
 
-export default Post
+export default Article

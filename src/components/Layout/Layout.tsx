@@ -35,7 +35,7 @@ export const Layout: VFC<Props> = ({ children, home = false }) => {
         <Container maxW="container.lg" padding={5}>
           <main>{children}</main>
 
-          <Spacer size={16} />
+          <Spacer size={52} />
 
           {!home && (
             <Button leftIcon={<FiChevronLeft />} variant="backToHome">

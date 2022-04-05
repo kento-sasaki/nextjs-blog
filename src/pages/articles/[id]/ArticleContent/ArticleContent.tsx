@@ -23,8 +23,6 @@ export const ArticleContent: VFC<Props> = props => {
 
   return (
     <Box flexDirection="column" bg={colors.primaryGray}>
-      <Spacer size={8} />
-
       <Center flexDirection="column">
         <Heading variant="heading1">{props.article.title ?? 'No title'}</Heading>
         <Spacer size={8} />
@@ -32,8 +30,8 @@ export const ArticleContent: VFC<Props> = props => {
           published: {format(date, 'yyyy/MM/dd')}
         </Text>
       </Center>
+      <Spacer size={16} />
 
-      <Spacer size={12} />
       <Divider />
 
       <Box as="article" marginX={4}>

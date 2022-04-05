@@ -2,6 +2,7 @@ import { Heading, Center } from '@chakra-ui/react'
 import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
+import React from 'react'
 
 import { Layout, ArticleCard, Spacer } from '@src/components'
 import { siteTitle } from '@src/constants/text'
@@ -33,14 +34,14 @@ const Home: NextPage<Props> = ({ articles }) => {
         </Center>
         <Spacer size={32} />
         {articles.map(({ id, date, title, tags }) => (
-          <>
-            <Link href={`/articles/${id}`} key={id} passHref>
+          <React.Fragment key={id}>
+            <Link href={`/articles/${id}`} passHref>
               <a>
                 <ArticleCard title={title ?? 'No Title'} tags={tags} dateString={date} />
               </a>
             </Link>
             <Spacer size={12} />
-          </>
+          </React.Fragment>
         ))}
       </section>
     </Layout>

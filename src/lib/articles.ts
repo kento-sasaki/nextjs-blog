@@ -1,7 +1,4 @@
 import { createClient } from 'contentful'
-import matter from 'gray-matter'
-import { remark } from 'remark'
-import html from 'remark-html'
 
 import { TagName } from '@src/components'
 import { IArticleFields } from '@src/types/generated/contentful'
@@ -13,7 +10,7 @@ export type MetaData = {
   tags: TagName[]
 }
 
-export type Article = MetaData & { contentHtml: string }
+export type Article = MetaData & { markdown?: string }
 
 const client = createClient({
   space: process.env.CF_SPACE_ID ?? '', // ID of a Compose-compatible space to be used \
@@ -34,22 +31,14 @@ export const getArticles = async () => {
 export const getArticleById = async (id: string) => {
   const { sys, fields, metadata } = await client.getEntry<IArticleFields>(id)
 
-  const contents = fields.body ?? ''
+  const markdown = fields.body
 
-  // Use gray-matter to parse the post metadata section
-  const matterResult = matter(contents)
-
-  // Use remark to convert markdown into HTML string
-  const processedContent = await remark().use(html).process(matterResult.content)
-  const contentHtml = processedContent.toString()
-
-  // Combine the data with the id and contentHtml
   return {
     id,
     title: fields.title,
     date: sys.createdAt,
     tags: metadata.tags.map(tag => tag.sys.id) as TagName[],
-    contentHtml,
+    markdown,
   }
 }
 

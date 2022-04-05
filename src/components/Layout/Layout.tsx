@@ -5,9 +5,8 @@ import { VFC, ReactNode } from 'react'
 import { FiChevronLeft } from 'react-icons/fi'
 
 import { Footer, Header, Spacer } from '@src/components'
+import { siteTitle } from '@src/constants/text'
 import { colors } from '@src/styles/colors'
-
-export const siteTitle = 'Kent.dev'
 
 type Props = {
   children: ReactNode
@@ -30,13 +29,13 @@ export const Layout: VFC<Props> = ({ children, home = false }) => {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
-      <Flex flexDirection="column" height="100vh" bg={colors.primaryGray}>
+      <Flex flexDirection="column" minHeight="100vh" bg={colors.primaryGray}>
         <Header title={siteTitle} />
 
         <Container maxW="container.lg" padding={5}>
           <main>{children}</main>
 
-          <Spacer size={16} />
+          <Spacer size={52} />
 
           {!home && (
             <Button leftIcon={<FiChevronLeft />} variant="backToHome">

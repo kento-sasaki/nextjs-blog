@@ -1,8 +1,9 @@
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next'
 import Head from 'next/head'
 
+import { ArticleContent } from './ArticleContent/ArticleContent'
+
 import { Layout } from '@src/components'
-import { Date } from '@src/components/date'
 import { siteTitle } from '@src/constants/text'
 import { getArticleById, getAllArticleIds, Article } from '@src/lib/articles'
 
@@ -45,13 +46,7 @@ const Article: NextPage<Props> = ({ article }) => {
           {siteTitle} | {article?.title ?? 'no title'}
         </title>
       </Head>
-      <article>
-        <h1>{article?.title ?? 'no title'}</h1>
-        <div>
-          <Date dateString={article?.date ?? ''} />
-        </div>
-        {article?.contentHtml && <div dangerouslySetInnerHTML={{ __html: article.contentHtml }} />}
-      </article>
+      {article && <ArticleContent article={article} />}
     </Layout>
   )
 }

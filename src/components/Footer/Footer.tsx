@@ -2,6 +2,7 @@ import { HStack, Box, Center, Text } from '@chakra-ui/react'
 import { VFC } from 'react'
 
 import { GitHubIcon, TwitterIcon, Spacer } from '@src/components'
+import { siteTitle } from '@src/constants/text'
 import { colors } from '@src/styles/colors'
 
 export const Footer: VFC = () => {
@@ -14,7 +15,7 @@ export const Footer: VFC = () => {
         </HStack>
         <Spacer size={20} />
         <Text color={colors.lightGray} fontSize="sm">
-          2022 Kent.dev - All rights reserved
+          2022 {siteTitle} - All rights reserved
         </Text>
       </Center>
     </Box>

@@ -31,7 +31,7 @@ export const theme = extendTheme({
         body: {
           color: themeColors.white,
           fontWeight: 500,
-          fontSize: 12,
+          fontSize: 16,
         },
         subtext: {
           color: themeColors.lightGray,
@@ -65,12 +65,6 @@ export const theme = extendTheme({
           fontSize: 'md',
           fontWeight: 700,
           as: 'h4',
-        },
-        heading5: {
-          color: themeColors.white,
-          fontSize: 'md',
-          fontWeight: 700,
-          as: 'h5',
         },
       },
     },

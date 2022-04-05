@@ -12,23 +12,23 @@ export default {
 
 const Template: ComponentStory<typeof Tag> = args => <Tag {...args} />
 
-export const React = Template.bind({})
-React.args = {
+export const ReactTag = Template.bind({})
+ReactTag.args = {
   name: 'react',
 }
-export const NextJs = Template.bind({})
-NextJs.args = {
+export const NextJsTag = Template.bind({})
+NextJsTag.args = {
   name: 'nextjs',
 }
-export const Apollo = Template.bind({})
-Apollo.args = {
+export const ApolloTag = Template.bind({})
+ApolloTag.args = {
   name: 'apollo',
 }
-export const GraphQL = Template.bind({})
-GraphQL.args = {
+export const GraphQLTag = Template.bind({})
+GraphQLTag.args = {
   name: 'graphql',
 }
-export const TypeScript = Template.bind({})
-TypeScript.args = {
+export const TypeScriptTag = Template.bind({})
+TypeScriptTag.args = {
   name: 'typescript',
 }

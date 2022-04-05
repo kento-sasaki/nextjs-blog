@@ -1,8 +1,8 @@
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next'
 import Head from 'next/head'
 
-import { Layout } from '@src/components'
-import { Date } from '@src/components/date'
+import { Layout, ArticleContent } from '@src/components'
+import { siteTitle } from '@src/constants/text'
 import { getArticleById, getAllArticleIds, Article } from '@src/lib/articles'
 
 type Props = {
@@ -36,21 +36,17 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
   }
 }
 
-const Post: NextPage<Props> = ({ article }) => {
+const Article: NextPage<Props> = ({ article }) => {
   return (
     <Layout>
       <Head>
-        <title>{article?.title ?? 'no title'}</title>
+        <title>
+          {siteTitle} | {article?.title ?? 'no title'}
+        </title>
       </Head>
-      <article>
-        <h1>{article?.title ?? 'no title'}</h1>
-        <div>
-          <Date dateString={article?.date ?? ''} />
-        </div>
-        {article?.contentHtml && <div dangerouslySetInnerHTML={{ __html: article.contentHtml }} />}
-      </article>
+      {article && <ArticleContent article={article} />}
     </Layout>
   )
 }
 
-export default Post
+export default Article

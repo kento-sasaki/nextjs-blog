@@ -4,8 +4,8 @@ export const themeColors = {
   mosGreen: '#009394',
   white: '#FFFFFF',
   lightGray: '#E0DAD5',
-  secondaryGray: '#3F3F3F',
-  primaryGray: '#2F2F2F',
+  secondaryGray: '#2F2F2F',
+  primaryGray: '#21201F',
   black: '#000000',
 }
 

@@ -1,9 +1,7 @@
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next'
 import Head from 'next/head'
 
-import { ArticleContent } from './ArticleContent/ArticleContent'
-
-import { Layout } from '@src/components'
+import { Layout, ArticleContent } from '@src/components'
 import { siteTitle } from '@src/constants/text'
 import { getArticleById, getAllArticleIds, Article } from '@src/lib/articles'
 

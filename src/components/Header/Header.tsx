@@ -12,30 +12,26 @@ type Props = {
 
 export const Header: VFC<Props> = props => {
   return (
-    <Container
-      maxW="container.lg"
-      bg={colors.primaryGray}
-      as="header"
-      paddingY={4}
-      marginBottom={4}
-    >
-      <Flex alignItems="center" height="40px">
-        <NextLink href="/" passHref>
-          <a>
-            <HStack spacing="12px">
-              <Icon as={HiCode} w={6} h={6} display="block" color={colors.white} />
-              <Heading variant="heading1">{props.title}</Heading>
-            </HStack>
-          </a>
-        </NextLink>
+    <Box bg={colors.primaryGray} as="header" paddingY={4} marginBottom={4}>
+      <Container maxW="container.lg">
+        <Flex alignItems="center" height="40px">
+          <NextLink href="/" passHref>
+            <a>
+              <HStack spacing="12px">
+                <Icon as={HiCode} w={6} h={6} display="block" color={colors.white} />
+                <Heading variant="heading1">{props.title}</Heading>
+              </HStack>
+            </a>
+          </NextLink>
 
-        <Spacer />
+          <Spacer />
 
-        <HStack spacing="20px">
-          <GitHubIcon width={5} height={5} />
-          <TwitterIcon width={5} height={5} />
-        </HStack>
-      </Flex>
-    </Container>
+          <HStack spacing="20px">
+            <GitHubIcon width={5} height={5} />
+            <TwitterIcon width={5} height={5} />
+          </HStack>
+        </Flex>
+      </Container>
+    </Box>
   )
 }

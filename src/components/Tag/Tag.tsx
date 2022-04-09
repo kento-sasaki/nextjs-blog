@@ -18,7 +18,7 @@ const label: Record<TagName, string> = {
 
 export const Tag: VFC<Props> = ({ name }) => {
   return (
-    <ChakraTag size="md" colorScheme="teal" borderRadius="full" variant="outline">
+    <ChakraTag size="md" colorScheme={name} borderRadius="full" variant="outline">
       {name === 'apollo' ? (
         <Icon as={SiApollographql} w={4} h={4} display="block" mr={2} />
       ) : name === 'graphql' ? (

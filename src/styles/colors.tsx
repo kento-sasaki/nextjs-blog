@@ -2,10 +2,10 @@
 
 export const themeColors = {
   mosGreen: '#009394',
-  white: '#FFFFFF',
-  lightGray: '#E0DAD5',
-  secondaryGray: '#2B2A2A',
-  primaryGray: '#21201F',
+  white: '#ffffff',
+  lightGray: '#e0dad5',
+  secondaryGray: '#2b2a2a',
+  primaryGray: '#21201f',
   black: '#000000',
 }
 

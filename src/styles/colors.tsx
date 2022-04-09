@@ -7,6 +7,11 @@ export const themeColors = {
   secondaryGray: '#2b2a2a',
   primaryGray: '#21201f',
   black: '#000000',
+  apollo: '#ad9bf6BF',
+  graphql: '#e10098BF',
+  nextjs: '#ffffffBF',
+  react: '#61dafbBF',
+  typescript: '#3178c6BF',
 }
 
 type Colors = keyof typeof themeColors

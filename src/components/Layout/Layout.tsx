@@ -41,7 +41,7 @@ export const Layout: VFC<Props> = ({ children, home = false }) => {
 
           {!home && (
             <Button leftIcon={<FiChevronLeft />} variant="backToHome">
-              <Link href="/">Back to home</Link>
+              <Link href="/articles">Back to home</Link>
             </Button>
           )}
         </Container>

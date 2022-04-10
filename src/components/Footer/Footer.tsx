@@ -7,7 +7,7 @@ import { colors } from '@src/styles/colors'
 
 export const Footer: VFC = () => {
   return (
-    <Box bg={colors.secondaryGray} as="footer" paddingBottom={2} paddingTop={12}>
+    <Box bg={colors.secondaryGray} as="footer" paddingBottom={4} paddingTop={12}>
       <Center flexDirection="column">
         <HStack spacing="20px">
           <GitHubIcon width={5} height={5} color={colors.lightGray} />

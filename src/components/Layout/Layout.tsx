@@ -1,4 +1,4 @@
-import { Container, Spacer as ChakraSpacer, Flex, Button } from '@chakra-ui/react'
+import { Container, Spacer as ChakraSpacer, Flex, Button, Fade } from '@chakra-ui/react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { VFC, ReactNode } from 'react'
@@ -33,7 +33,9 @@ export const Layout: VFC<Props> = ({ children, home = false }) => {
         <Header title={siteTitle} />
 
         <Container maxW="container.lg" padding={5}>
-          <main>{children}</main>
+          <Fade in>
+            <main>{children}</main>
+          </Fade>
 
           <Spacer size={52} />
 

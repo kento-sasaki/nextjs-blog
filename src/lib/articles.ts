@@ -17,8 +17,15 @@ const client = createClient({
   accessToken: process.env.CF_DELIVERY_ACCESS_TOKEN ?? '', // delivery API key for the space \
 })
 
-export const getArticles = async () => {
-  const { items } = await client.getEntries<IArticleFields>({ limit: 20 })
+export const getArticles = async (page = 1) => {
+  const limit = 12
+
+  //NOTE: https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/reverse-order
+  const { items } = await client.getEntries<IArticleFields>({
+    limit,
+    skip: (page - 1) * limit,
+    order: '-sys.createdAt',
+  })
 
   return items.map(({ sys, fields, metadata }) => ({
     id: sys.id,

@@ -7,6 +7,17 @@ export const theme = extendTheme({
     brand: {
       ...themeColors,
     },
+    primaryGray: {
+      100: themeColors.primaryGray,
+      200: themeColors.primaryGray,
+      300: themeColors.primaryGray,
+      400: themeColors.primaryGray,
+      500: themeColors.primaryGray,
+      600: themeColors.primaryGray,
+      700: themeColors.primaryGray,
+      800: themeColors.primaryGray,
+      900: themeColors.primaryGray,
+    },
   },
   components: {
     Button: {

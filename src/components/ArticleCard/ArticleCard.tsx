@@ -15,7 +15,7 @@ export const ArticleCard: VFC<Props> = props => {
   const date = parseISO(props.dateString)
 
   return (
-    <Box bg={colors.secondaryGray} padding={4} borderRadius={5}>
+    <Box bg={colors.secondaryGray} padding={4} borderRadius={5} _hover={{ bg: '#3f3f3f' }}>
       <Text variant="title">{props.title}</Text>
       <Spacer size={8} />
       <HStack spacing={2}>

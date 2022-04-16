@@ -4,16 +4,17 @@ import Link from 'next/link'
 import { VFC, ReactNode } from 'react'
 import { FiChevronLeft } from 'react-icons/fi'
 
-import { Footer, Header, Spacer } from '@src/components'
+import { Footer, Header, Spacer, Pagination } from '@src/components'
 import { siteTitle } from '@src/constants/text'
 import { colors } from '@src/styles/colors'
 
 type Props = {
   children: ReactNode
   home?: boolean
+  havePages?: boolean
 }
 
-export const Layout: VFC<Props> = ({ children, home = false }) => {
+export const Layout: VFC<Props> = ({ children, home = false, havePages = false }) => {
   return (
     <>
       <Head>
@@ -40,12 +41,18 @@ export const Layout: VFC<Props> = ({ children, home = false }) => {
 
           {!home && (
             <Button leftIcon={<FiChevronLeft />} variant="backToHome">
-              <Link href="/articles">Back to home</Link>
+              <Link href="/articles">Back</Link>
             </Button>
           )}
         </Container>
 
         <ChakraSpacer />
+        {havePages && (
+          <>
+            <Pagination currentPage={2} totalPageCount={5} />
+            <Spacer size={32} />
+          </>
+        )}
 
         <Footer />
       </Flex>

@@ -24,7 +24,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
 const Home: NextPage<Props> = ({ articles }) => {
   return (
-    <Layout home>
+    <Layout home havePages>
       <Head>
         <title>{siteTitle}</title>
       </Head>

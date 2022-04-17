@@ -17,13 +17,13 @@ const client = createClient({
   accessToken: process.env.CF_DELIVERY_ACCESS_TOKEN ?? '', // delivery API key for the space \
 })
 
-export const getArticles = async (page = 1) => {
-  const limit = 12
+const articlesPerPage = 12
 
+export const getArticles = async (page = 1) => {
   //NOTE: https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/reverse-order
   const { items } = await client.getEntries<IArticleFields>({
-    limit,
-    skip: (page - 1) * limit,
+    limit: articlesPerPage,
+    skip: (page - 1) * articlesPerPage,
     order: '-sys.createdAt',
   })
 
@@ -50,5 +50,13 @@ export const getArticleById = async (id: string) => {
 }
 
 export const getAllArticleIds = async () => {
-  return (await getArticles()).map(({ id }) => ({ params: { id } }))
+  const { items } = await client.getEntries<IArticleFields>()
+
+  return items.map(({ sys: { id } }) => ({ params: { id } }))
+}
+
+export const getAllPageCount = async () => {
+  const { items } = await client.getEntries<IArticleFields>()
+
+  return Math.ceil(items.length / articlesPerPage)
 }

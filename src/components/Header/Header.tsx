@@ -15,7 +15,7 @@ export const Header: VFC<Props> = props => {
     <Box bg={colors.primaryGray} as="header" paddingY={4} marginBottom={4}>
       <Container maxW="container.lg">
         <Flex alignItems="center" height="40px">
-          <NextLink href="/articles" passHref>
+          <NextLink href="/articles/page/1" passHref>
             <a>
               <HStack spacing="12px">
                 <Icon as={HiCode} w={6} h={6} display="block" color={colors.white} />

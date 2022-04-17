@@ -6,6 +6,7 @@ import { FiChevronLeft } from 'react-icons/fi'
 
 import { Footer, Header, Spacer, Pagination } from '@src/components'
 import { siteTitle } from '@src/constants/text'
+import { usePage } from '@src/hooks/usePage'
 import { colors } from '@src/styles/colors'
 
 type Props = {
@@ -19,6 +20,8 @@ export const Layout: VFC<Props> = ({ children, home = false, havePages = false }
   const back = () => {
     router.back()
   }
+
+  const { currentPage, totalPageCount } = usePage()
 
   return (
     <>
@@ -52,9 +55,9 @@ export const Layout: VFC<Props> = ({ children, home = false, havePages = false }
         </Container>
 
         <ChakraSpacer />
-        {havePages && (
+        {havePages && totalPageCount && (
           <>
-            <Pagination currentPage={2} totalPageCount={5} />
+            <Pagination currentPage={currentPage} totalPageCount={totalPageCount} />
             <Spacer size={32} />
           </>
         )}

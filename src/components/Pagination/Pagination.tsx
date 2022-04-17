@@ -1,4 +1,4 @@
-import { Box, Text, HStack, Spacer as ChakraSpacer, Icon, Container } from '@chakra-ui/react'
+import { Box, HStack, Spacer as ChakraSpacer, Icon, Container, Button } from '@chakra-ui/react'
 import { VFC } from 'react'
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 
@@ -16,33 +16,31 @@ export const Pagination: VFC<Props> = props => {
     <Box bg={colors.primaryGray}>
       <Container maxW="container.lg">
         <HStack>
-          {props.currentPage !== 1 && <Icon as={FiChevronLeft} color={colors.white} />}
+          {props.currentPage !== 1 && (
+            <Button variant="arrow" onClick={() => {}}>
+              <Icon as={FiChevronLeft} />
+            </Button>
+          )}
 
           <ChakraSpacer />
 
           {totalPages.map(page => (
-            <Box
+            <Button
               key={`page-${page}`}
-              bg={page === props.currentPage ? colors.white : colors.primaryGray}
-              borderRadius="full"
-              alignContent="center"
-              textAlign="center"
-              w="1.5rem"
-              h="1.5rem"
+              variant={page === props.currentPage ? 'currentPage' : 'page'}
+              size="sm"
+              onClick={() => {}}
             >
-              <Text
-                color={page === props.currentPage ? colors.primaryGray : colors.white}
-                fontWeight={600}
-              >
-                {page}
-              </Text>
-            </Box>
+              {page}
+            </Button>
           ))}
 
           <ChakraSpacer />
 
           {props.currentPage !== props.totalPageCount && (
-            <Icon as={FiChevronRight} color={colors.white} />
+            <Button variant="arrow" onClick={() => {}}>
+              <Icon as={FiChevronRight} color={colors.white} />
+            </Button>
           )}
         </HStack>
       </Container>

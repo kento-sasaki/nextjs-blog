@@ -1,6 +1,6 @@
 import { Container, Spacer as ChakraSpacer, Flex, Button, Fade } from '@chakra-ui/react'
 import Head from 'next/head'
-import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { VFC, ReactNode } from 'react'
 import { FiChevronLeft } from 'react-icons/fi'
 
@@ -15,6 +15,11 @@ type Props = {
 }
 
 export const Layout: VFC<Props> = ({ children, home = false, havePages = false }) => {
+  const router = useRouter()
+  const back = () => {
+    router.back()
+  }
+
   return (
     <>
       <Head>
@@ -40,8 +45,8 @@ export const Layout: VFC<Props> = ({ children, home = false, havePages = false }
           <Spacer size={52} />
 
           {!home && (
-            <Button leftIcon={<FiChevronLeft />} variant="backToHome">
-              <Link href="/articles">Back</Link>
+            <Button leftIcon={<FiChevronLeft />} variant="back" onClick={back}>
+              Back
             </Button>
           )}
         </Container>

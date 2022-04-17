@@ -22,13 +22,37 @@ export const theme = extendTheme({
   components: {
     Button: {
       variants: {
-        backToHome: {
+        back: {
           color: themeColors.white,
           fontWeight: 500,
           bg: themeColors.primaryGray,
           _hover: {
             bg: themeColors.secondaryGray,
           },
+        },
+        arrow: {
+          color: themeColors.white,
+          bg: themeColors.primaryGray,
+          _hover: {
+            bg: themeColors.secondaryGray,
+          },
+          borderRadius: 'full',
+          w: '1rem',
+        },
+        currentPage: {
+          bg: themeColors.white,
+          color: themeColors.primaryGray,
+          borderRadius: 'full',
+          fontWeight: 600,
+        },
+        page: {
+          bg: themeColors.primaryGray,
+          _hover: {
+            bg: themeColors.secondaryGray,
+          },
+          color: themeColors.white,
+          borderRadius: 'full',
+          fontWeight: 600,
         },
       },
     },

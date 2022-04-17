@@ -1,19 +1,28 @@
 import { Container, Spacer as ChakraSpacer, Flex, Button, Fade } from '@chakra-ui/react'
 import Head from 'next/head'
-import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { VFC, ReactNode } from 'react'
 import { FiChevronLeft } from 'react-icons/fi'
 
-import { Footer, Header, Spacer } from '@src/components'
+import { Footer, Header, Spacer, Pagination } from '@src/components'
 import { siteTitle } from '@src/constants/text'
+import { usePage } from '@src/hooks/usePage'
 import { colors } from '@src/styles/colors'
 
 type Props = {
   children: ReactNode
   home?: boolean
+  havePages?: boolean
 }
 
-export const Layout: VFC<Props> = ({ children, home = false }) => {
+export const Layout: VFC<Props> = ({ children, home = false, havePages = false }) => {
+  const router = useRouter()
+  const back = () => {
+    router.back()
+  }
+
+  const { currentPage, totalPageCount } = usePage()
+
   return (
     <>
       <Head>
@@ -39,13 +48,19 @@ export const Layout: VFC<Props> = ({ children, home = false }) => {
           <Spacer size={52} />
 
           {!home && (
-            <Button leftIcon={<FiChevronLeft />} variant="backToHome">
-              <Link href="/">Back to home</Link>
+            <Button leftIcon={<FiChevronLeft />} variant="back" onClick={back}>
+              Back
             </Button>
           )}
         </Container>
 
         <ChakraSpacer />
+        {havePages && totalPageCount && (
+          <>
+            <Pagination currentPage={currentPage} totalPageCount={totalPageCount} />
+            <Spacer size={32} />
+          </>
+        )}
 
         <Footer />
       </Flex>

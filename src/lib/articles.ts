@@ -26,8 +26,6 @@ const devConfig = {
 
 const config = process.env.NODE_ENV === 'production' ? prodConfig : devConfig
 
-console.log('============================= CONFIG =============================')
-console.log(config)
 const client = createClient(config)
 
 const articlesPerPage = 12

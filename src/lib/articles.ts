@@ -12,21 +12,22 @@ export type MetaData = {
 
 export type Article = MetaData & { markdown?: string }
 
-const _config = {
-  space: process.env.CF_SPACE_ID ?? '',
-  accessToken: process.env.CF_ACCESS_TOKEN ?? '',
+const prodConfig = {
+  space: process.env.CF_SPACE_ID!,
+  accessToken: process.env.CF_ACCESS_TOKEN!,
 }
 
-const config =
-  process.env.NODE_ENV === 'production'
-    ? _config
-    : {
-        ..._config,
-        // NOTE: preview の API を叩く場合は host を preview.contentful.com にする必要がある
-        //       https://www.contentful.com/developers/docs/references/content-preview-api/
-        host: 'preview.contentful.com',
-      }
+const devConfig = {
+  ...prodConfig,
+  // NOTE: preview の API を叩く場合は host を preview.contentful.com にする必要がある
+  //       https://www.contentful.com/developers/docs/references/content-preview-api/
+  host: 'preview.contentful.com',
+}
 
+const config = process.env.NODE_ENV === 'production' ? prodConfig : devConfig
+
+console.log('============================= CONFIG =============================')
+console.log(config)
 const client = createClient(config)
 
 const articlesPerPage = 12

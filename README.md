@@ -1,6 +1,6 @@
 ## ブログ URL
 
-https://nextjs-blog-xi-flame-12.vercel.app/articles
+https://nextjs-blog-xi-flame-12.vercel.app
 
 ## Storybook
 

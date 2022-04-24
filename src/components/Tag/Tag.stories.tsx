@@ -32,3 +32,11 @@ export const TypeScriptTag = Template.bind({})
 TypeScriptTag.args = {
   name: 'typescript',
 }
+export const StroybookTag = Template.bind({})
+StroybookTag.args = {
+  name: 'storybook',
+}
+export const ChakraTag = Template.bind({})
+ChakraTag.args = {
+  name: 'chakra',
+}

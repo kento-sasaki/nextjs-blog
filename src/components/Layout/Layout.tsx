@@ -1,7 +1,7 @@
 import { Container, Spacer as ChakraSpacer, Flex, Button, Fade } from '@chakra-ui/react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { VFC, ReactNode } from 'react'
+import { FC, ReactNode } from 'react'
 import { FiChevronLeft } from 'react-icons/fi'
 
 import { Footer, Header, Spacer, Pagination } from '@src/components'
@@ -15,7 +15,7 @@ type Props = {
   havePages?: boolean
 }
 
-export const Layout: VFC<Props> = ({ children, home = false, havePages = false }) => {
+export const Layout: FC<Props> = ({ children, home = false, havePages = false }) => {
   const router = useRouter()
   const back = () => {
     router.back()

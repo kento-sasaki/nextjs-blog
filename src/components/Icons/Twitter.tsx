@@ -1,5 +1,5 @@
 import { Icon, Link, LayoutProps, ColorProps } from '@chakra-ui/react'
-import { VFC } from 'react'
+import { FC } from 'react'
 import { FiTwitter } from 'react-icons/fi'
 
 import * as urls from '@src/constants/urls'
@@ -12,7 +12,7 @@ type Props = {
   color?: ColorProps['color']
 }
 
-export const TwitterIcon: VFC<Props> = ({
+export const TwitterIcon: FC<Props> = ({
   width,
   height,
   display = 'block',

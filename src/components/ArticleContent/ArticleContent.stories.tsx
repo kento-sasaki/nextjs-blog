@@ -23,8 +23,8 @@ const Template: ComponentStory<typeof ArticleContent> = args => <ArticleContent 
 
 const article = {
   id: 'nn8w4kI1UNjj4i7Y9BpJF',
-  title: 'Chakra UI + Storybook',
-  date: '2022-04-03T13:45:10.439Z',
+  title: 'サンプル記事',
+  createdAt: '2022-04-03T13:45:10.439Z',
   tags: ['react'] as TagName[],
   markdown:
     '# Heading1\n' +

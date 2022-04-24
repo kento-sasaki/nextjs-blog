@@ -1,5 +1,5 @@
 import { Tag as ChakraTag, TagLabel, Icon } from '@chakra-ui/react'
-import { VFC } from 'react'
+import { FC } from 'react'
 import {
   SiGraphql,
   SiReact,
@@ -35,7 +35,7 @@ const label: Record<TagName, string> = {
   chakra: 'Chakura UI',
 }
 
-export const Tag: VFC<Props> = ({ name }) => {
+export const Tag: FC<Props> = ({ name }) => {
   return (
     <ChakraTag size="md" colorScheme="primaryGray" borderRadius="full" variant="solid">
       {name === 'apollo' ? (

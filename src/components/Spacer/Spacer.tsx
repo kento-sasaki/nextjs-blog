@@ -1,8 +1,8 @@
-import React, { VFC } from 'react'
+import React, { FC } from 'react'
 
 type Props = { size: number; horizontal?: boolean }
 
-export const Spacer: VFC<Props> = ({ size, horizontal }) => {
+export const Spacer: FC<Props> = ({ size, horizontal }) => {
   const px = size
 
   return (

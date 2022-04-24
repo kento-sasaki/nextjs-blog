@@ -6,7 +6,7 @@ import { IArticleFields } from '@src/types/generated/contentful'
 export type MetaData = {
   id: string
   title?: string
-  date: string
+  createdAt: string
   tags: TagName[]
 }
 
@@ -41,7 +41,7 @@ export const getArticles = async (page = 1) => {
   return items.map(({ sys, fields, metadata }) => ({
     id: sys.id,
     title: fields.title,
-    date: sys.createdAt,
+    createdAt: sys.createdAt,
     tags: metadata.tags.map(tag => tag.sys.id) as TagName[],
   }))
 }
@@ -54,7 +54,7 @@ export const getArticleById = async (id: string) => {
   return {
     id,
     title: fields.title,
-    date: sys.createdAt,
+    createdAt: sys.createdAt,
     tags: metadata.tags.map(tag => tag.sys.id) as TagName[],
     markdown,
   }

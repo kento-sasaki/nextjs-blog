@@ -12,6 +12,8 @@ export const themeColors = {
   nextjs: '#ffffffBF',
   react: '#61dafbBF',
   typescript: '#3178c6BF',
+  storybook: '#ff4785',
+  chakra: '#65cacc',
 }
 
 type Colors = keyof typeof themeColors

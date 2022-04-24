@@ -1,6 +1,6 @@
 import { Box, Text } from '@chakra-ui/react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import React, { VFC } from 'react'
+import React, { FC } from 'react'
 
 import { Layout } from './Layout'
 
@@ -14,7 +14,7 @@ export default {
   },
 } as ComponentMeta<typeof Layout>
 
-const Children: VFC = () => (
+const Children: FC = () => (
   <Box borderColor={colors.white} borderWidth={1} textAlign="center" paddingY={12}>
     <Text fontSize={32} fontWeight={700} color={colors.white}>
       content

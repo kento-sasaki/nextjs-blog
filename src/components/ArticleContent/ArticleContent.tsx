@@ -1,6 +1,6 @@
 import { Box, Text, Center, Heading, Divider } from '@chakra-ui/react'
 import { format, parseISO } from 'date-fns'
-import { VFC } from 'react'
+import { FC } from 'react'
 import ReactMarkdown from 'react-markdown'
 
 import { CodeBlock } from './CodeBlock/CodeBlock'
@@ -18,16 +18,16 @@ type Props = {
   article: Article
 }
 
-export const ArticleContent: VFC<Props> = props => {
-  const date = parseISO(props.article.date)
+export const ArticleContent: FC<Props> = ({ article }) => {
+  const createdAt = parseISO(article.createdAt)
 
   return (
     <Box flexDirection="column" bg={colors.primaryGray}>
       <Center flexDirection="column">
-        <Heading variant="heading1">{props.article.title ?? 'No title'}</Heading>
+        <Heading variant="heading1">{article.title ?? 'No title'}</Heading>
         <Spacer size={8} />
         <Text variant="body" color={colors.lightGray}>
-          published: {format(date, 'yyyy/MM/dd')}
+          published: {format(createdAt, 'yyyy/MM/dd')}
         </Text>
       </Center>
       <Spacer size={16} />
@@ -35,7 +35,7 @@ export const ArticleContent: VFC<Props> = props => {
       <Divider />
 
       <Box as="article" marginX={4}>
-        {props.article.markdown ? (
+        {article.markdown ? (
           <ReactMarkdown
             components={{
               code: CodeBlock,
@@ -51,7 +51,7 @@ export const ArticleContent: VFC<Props> = props => {
               // a:
             }}
           >
-            {props.article.markdown}
+            {article.markdown}
           </ReactMarkdown>
         ) : // TODO: コンテンツが見つからなかった場合の画面作る
         null}

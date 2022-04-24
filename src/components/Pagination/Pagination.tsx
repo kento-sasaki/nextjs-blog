@@ -1,5 +1,5 @@
 import { Box, HStack, Spacer as ChakraSpacer, Icon, Container, Button } from '@chakra-ui/react'
-import { VFC } from 'react'
+import { FC } from 'react'
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 
 import { usePage } from '@src/hooks/usePage'
@@ -10,15 +10,15 @@ type Props = {
   totalPageCount: number
 }
 
-export const Pagination: VFC<Props> = props => {
+export const Pagination: FC<Props> = ({ currentPage, totalPageCount }) => {
   const { goNextPage, backPrevPage, navigate } = usePage()
-  const totalPages = [...Array(props.totalPageCount)].map((_, i) => i + 1)
+  const totalPages = [...Array(totalPageCount)].map((_, i) => i + 1)
 
   return (
     <Box bg={colors.primaryGray}>
       <Container maxW="container.lg">
         <HStack>
-          {props.currentPage !== 1 && (
+          {currentPage !== 1 && (
             <Button variant="arrow" onClick={backPrevPage}>
               <Icon as={FiChevronLeft} />
             </Button>
@@ -29,7 +29,7 @@ export const Pagination: VFC<Props> = props => {
           {totalPages.map(page => (
             <Button
               key={`page-${page}`}
-              variant={page === props.currentPage ? 'currentPage' : 'page'}
+              variant={page === currentPage ? 'currentPage' : 'page'}
               size="sm"
               onClick={() => {
                 navigate(page)
@@ -41,7 +41,7 @@ export const Pagination: VFC<Props> = props => {
 
           <ChakraSpacer />
 
-          {props.currentPage !== props.totalPageCount && (
+          {currentPage !== totalPageCount && (
             <Button variant="arrow" onClick={goNextPage}>
               <Icon as={FiChevronRight} color={colors.white} />
             </Button>

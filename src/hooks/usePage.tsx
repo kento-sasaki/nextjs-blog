@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import React, { VFC, createContext, useContext, useState, ReactNode } from 'react'
+import React, { FC, createContext, useContext, useState, ReactNode } from 'react'
 
 type Page = {
   currentPage: number
@@ -23,7 +23,7 @@ const { Provider } = context
 
 export const usePage = () => useContext(context)
 
-export const PageProvider: VFC<{ children: ReactNode }> = ({ children }) => {
+export const PageProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [currentPage, setCurrentPage] = useState<number>(1)
   const [totalPageCount, setTotalPageCount] = useState<number | undefined>(undefined)
 

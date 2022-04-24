@@ -65,11 +65,11 @@ const Articles: NextPage<Props> = ({ articles, totalPageCount }) => {
           <Heading variant="heading1">Articles</Heading>
         </Center>
         <Spacer size={32} />
-        {articles.map(({ id, date, title, tags }) => (
+        {articles.map(({ id, createdAt, title, tags }) => (
           <React.Fragment key={id}>
             <Link href={`/articles/${id}`} passHref>
               <a>
-                <ArticleCard title={title ?? 'No Title'} tags={tags} dateString={date} />
+                <ArticleCard title={title ?? 'No Title'} tags={tags} dateString={createdAt} />
               </a>
             </Link>
             <Spacer size={12} />

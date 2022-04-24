@@ -1,5 +1,5 @@
 import { Tag as ChakraTag, TagLabel, Icon } from '@chakra-ui/react'
-import { VFC } from 'react'
+import { FC } from 'react'
 import { SiGraphql, SiReact, SiApollographql, SiTypescript, SiNextdotjs } from 'react-icons/si'
 
 import { colors } from '@src/styles/colors'
@@ -18,7 +18,7 @@ const label: Record<TagName, string> = {
   nextjs: 'Next.js',
 }
 
-export const Tag: VFC<Props> = ({ name }) => {
+export const Tag: FC<Props> = ({ name }) => {
   return (
     <ChakraTag size="md" colorScheme="primaryGray" borderRadius="full" variant="solid">
       {name === 'apollo' ? (

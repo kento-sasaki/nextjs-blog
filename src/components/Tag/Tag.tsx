@@ -1,5 +1,6 @@
 import { Tag as ChakraTag, TagLabel, Icon } from '@chakra-ui/react'
 import { FC } from 'react'
+import { BsQuestionCircle } from 'react-icons/bs'
 import {
   SiGraphql,
   SiReact,
@@ -52,10 +53,11 @@ export const Tag: FC<Props> = ({ name }) => {
         <Icon as={SiStorybook} w={4} h={4} color={colors.storybook} display="block" mr={2} />
       ) : name === 'chakra' ? (
         <Icon as={SiChakraui} w={4} h={4} color={colors.chakra} display="block" mr={2} />
-      ) : null}
-
+      ) : (
+        <Icon as={BsQuestionCircle} w={4} h={4} color={colors.white} display="block" mr={2} />
+      )}
       <TagLabel fontSize={14} fontWeight={700}>
-        {label[name]}
+        {label[name] ?? 'Other'}
       </TagLabel>
     </ChakraTag>
   )

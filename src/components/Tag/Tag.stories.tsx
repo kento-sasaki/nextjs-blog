@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Tag } from './Tag'
+import { Tag, TagName } from './Tag'
 
 export default {
   title: 'Blog/Tag',
@@ -39,4 +39,8 @@ StroybookTag.args = {
 export const ChakraTag = Template.bind({})
 ChakraTag.args = {
   name: 'chakra',
+}
+export const OtherTag = Template.bind({})
+OtherTag.args = {
+  name: 'other' as TagName,
 }

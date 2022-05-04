@@ -1,7 +1,6 @@
 // NOTE: VScode で色を視認できるように拡張子を .tsx にしている
 
 export const themeColors = {
-  mosGreen: '#009394',
   white: '#ffffff',
   lightGray: '#e0dad5',
   secondaryGray: '#2b2a2a',

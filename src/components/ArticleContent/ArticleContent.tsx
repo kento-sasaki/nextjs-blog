@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown'
 
 import { CodeBlock } from './CodeBlock/CodeBlock'
 import { Heading1, Heading2, Heading3, Heading4 } from './Heading'
+import { Link } from './Link/Link'
 import { ListItem } from './ListItem/ListItem'
 import { OrderedList } from './OrderedList/OrderedList'
 import { Paragraph } from './Paragraph/Paragraph'
@@ -47,8 +48,7 @@ export const ArticleContent: FC<Props> = ({ article }) => {
               ol: OrderedList,
               li: ListItem,
               ul: UnorderedList,
-              // blockquote:
-              // a:
+              a: Link,
             }}
           >
             {article.markdown}

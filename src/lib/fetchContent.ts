@@ -68,13 +68,17 @@ export const getArticleById = async (id: string) => {
 }
 
 export const getAllArticleIds = async () => {
-  const { items } = await client.getEntries<IArticleFields>()
+  const { items } = await client.getEntries<IArticleFields>({
+    content_type: 'article',
+  })
 
   return items.map(({ sys: { id } }) => ({ params: { id } }))
 }
 
 export const getAllPageCount = async () => {
-  const { items } = await client.getEntries<IArticleFields>()
+  const { items } = await client.getEntries<IArticleFields>({
+    content_type: 'article',
+  })
 
   return Math.ceil(items.length / articlesPerPage)
 }

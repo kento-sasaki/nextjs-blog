@@ -28,7 +28,32 @@ export interface IArticle extends Entry<IArticleFields> {
   }
 }
 
-export type CONTENT_TYPE = 'article'
+export interface IProfileFields {
+  /** body */
+  body?: string | undefined
+
+  /** profile image */
+  profileImage?: Asset | undefined
+}
+
+export interface IProfile extends Entry<IProfileFields> {
+  sys: {
+    id: string
+    type: string
+    createdAt: string
+    updatedAt: string
+    locale: string
+    contentType: {
+      sys: {
+        id: 'profile'
+        linkType: 'ContentType'
+        type: 'Link'
+      }
+    }
+  }
+}
+
+export type CONTENT_TYPE = 'article' | 'profile'
 
 export type LOCALE_CODE = 'en-US' | 'ja'
 

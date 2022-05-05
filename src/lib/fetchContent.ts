@@ -1,7 +1,7 @@
-import { createClient } from 'contentful'
+import { createClient, Asset } from 'contentful'
 
 import { TagName } from '@src/components'
-import { IArticleFields } from '@src/types/generated/contentful'
+import { IArticleFields, IProfileFields } from '@src/types/generated/contentful'
 
 export type MetaData = {
   id: string
@@ -11,6 +11,12 @@ export type MetaData = {
 }
 
 export type Article = MetaData & { markdown?: string }
+
+export type Profile = {
+  createdAt: string
+  markdown?: string
+  image?: Asset
+}
 
 const prodConfig = {
   space: process.env.CF_SPACE_ID!,
@@ -36,6 +42,7 @@ export const getArticles = async (page = 1) => {
     limit: articlesPerPage,
     skip: (page - 1) * articlesPerPage,
     order: '-sys.createdAt',
+    content_type: 'article',
   })
 
   return items.map(({ sys, fields, metadata }) => ({
@@ -70,4 +77,16 @@ export const getAllPageCount = async () => {
   const { items } = await client.getEntries<IArticleFields>()
 
   return Math.ceil(items.length / articlesPerPage)
+}
+
+export const getProfile = async () => {
+  const { items } = await client.getEntries<IProfileFields>({
+    content_type: 'profile',
+  })
+
+  return {
+    createdAt: items[0].sys.createdAt,
+    markdown: items[0].fields.body,
+    image: items[0].fields.profileImage,
+  }
 }

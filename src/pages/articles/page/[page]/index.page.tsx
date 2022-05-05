@@ -8,7 +8,7 @@ import React, { useEffect } from 'react'
 import { Layout, ArticleCard, Spacer } from '@src/components'
 import { siteTitle } from '@src/constants/text'
 import { usePage } from '@src/hooks/usePage'
-import { getAllPageCount, getArticles, MetaData } from '@src/lib/articles'
+import { getAllPageCount, getArticles, MetaData } from '@src/lib/fetchContent'
 
 type Props = {
   articles: MetaData[]

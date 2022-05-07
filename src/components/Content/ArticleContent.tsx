@@ -12,7 +12,7 @@ import { Paragraph } from './Paragraph/Paragraph'
 import { UnorderedList } from './UnorderedList/UnorderedList'
 
 import { Spacer } from '@src/components'
-import { Article } from '@src/lib/articles'
+import { Article } from '@src/lib/fetchContent'
 import { colors } from '@src/styles/colors'
 
 type Props = {

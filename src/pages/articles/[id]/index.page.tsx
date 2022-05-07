@@ -3,7 +3,7 @@ import Head from 'next/head'
 
 import { Layout, ArticleContent } from '@src/components'
 import { siteTitle } from '@src/constants/text'
-import { getArticleById, getAllArticleIds, Article } from '@src/lib/articles'
+import { getArticleById, getAllArticleIds, Article } from '@src/lib/fetchContent'
 
 type Props = {
   article: Article | undefined

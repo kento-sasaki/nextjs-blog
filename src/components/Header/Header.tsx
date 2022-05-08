@@ -24,11 +24,11 @@ export const Header: FC<Props> = ({ title }) => {
         <HStack alignItems="end">
           <NextLink href="/articles/page/1" passHref>
             <a>
-              <HStack spacing="12px" {...wrapperStyle}>
+              <HStack spacing={{ base: 2, md: 3, lg: 3 }} {...wrapperStyle}>
                 <Icon
                   as={HiCode}
-                  w={{ base: 3, md: 4, lg: 6 }}
-                  h={{ base: 3, md: 4, lg: 6 }}
+                  w={{ base: 4, md: 6, lg: 6 }}
+                  h={{ base: 4, md: 6, lg: 6 }}
                   display="block"
                   color={colors.white}
                 />

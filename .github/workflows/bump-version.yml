@@ -21,5 +21,5 @@ jobs:
 
           npm version "0.1.$GITHUB_RUN_NUMBER" --git-tag-version false
 
-          git co -a -m 'bump version'
+          git commit -a -m 'bump version'
           git push

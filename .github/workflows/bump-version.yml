@@ -19,7 +19,7 @@ jobs:
           git config --local user.email "github-actions@github.com"
           git config --local user.name "github-actions"
 
-          npm version "0.1.$GITHUB_RUN_NUMBER"
+          npm version "0.1.$GITHUB_RUN_NUMBER" --git-tag-version false
 
-          git push --tags
+          git co -a -m 'bump version'
           git push

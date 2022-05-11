@@ -25,11 +25,7 @@ const profile = {
   createdAt: '2022-05-05T12:25:33.157Z',
   markdown:
     '- I love TypeScript, React and Next.js\n' +
-    '- I’m currently learning Ruby on Rails, GrpahQL, and Apollo.\n' +
-    '\n' +
-    '![github-stats](https://github-readme-stats.vercel.app/api?username=kento-sasaki&show_icons=true)\n' +
-    '\n' +
-    '![github-stats](https://github-readme-stats.vercel.app/api/top-langs/?username=kento-sasaki)\n',
+    '- I’m currently learning Ruby on Rails, GrpahQL, and Apollo.\n',
   // image: {
   //   metadata: { tags: [] },
   //   sys: {

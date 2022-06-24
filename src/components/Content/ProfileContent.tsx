@@ -37,7 +37,7 @@ export const ProfileContent: FC<Props> = ({ profile }) => {
         <Divider />
         <Spacer size={16} />
 
-        <Avatar name="Kento Sasaki" size="xl" src={profile.image?.fields.file.url} />
+        <Avatar name="Kento Sasaki" size="xl" src="/images/profile.jpg" />
         <Spacer size={8} />
         <Heading variant="heading1">👋 Hi, I’m Kento Sasaki</Heading>
         <Spacer size={32} />

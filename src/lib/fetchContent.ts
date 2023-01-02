@@ -30,7 +30,7 @@ const devConfig = {
   host: 'preview.contentful.com',
 }
 
-const config = process.env.NODE_ENV === 'production' ? prodConfig : devConfig
+const config = process.env.VERCEL_ENV === 'production' ? prodConfig : devConfig
 
 const client = createClient(config)
 

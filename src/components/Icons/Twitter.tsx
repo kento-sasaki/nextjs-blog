@@ -1,6 +1,6 @@
 import { Icon, Link, LayoutProps, ColorProps } from '@chakra-ui/react'
 import { FC } from 'react'
-import { FiTwitter } from 'react-icons/fi'
+import { FiTwitter, FiX } from 'react-icons/fi'
 
 import * as urls from '@src/constants/urls'
 import { colors } from '@src/styles/colors'
@@ -19,6 +19,6 @@ export const TwitterIcon: FC<Props> = ({
   color = colors.white,
 }) => (
   <Link href={urls.twitterUrl} isExternal>
-    <Icon as={FiTwitter} w={width} h={height} color={color} display={display} />
+    <Icon as={FiX} w={width} h={height} color={color} display={display} />
   </Link>
 )
